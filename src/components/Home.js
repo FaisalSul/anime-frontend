@@ -16,7 +16,7 @@ const Home = () => {
                     </Col>
                     <Col md={6} >
                         <img
-                            src={'/zoro.avif'}
+                            src={'/zoro.png'}
                             alt="Anime"
                             style={{ maxWidth: '100%', height: 'auto', borderRadius: '5px' }}
                         />
