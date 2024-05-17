@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/anime-frontend/static/css/main.44f8b8b5.css",
-    "main.js": "/anime-frontend/static/js/main.bc5b88bc.js",
+    "main.js": "/anime-frontend/static/js/main.02a5869f.js",
     "index.html": "/anime-frontend/index.html",
     "main.44f8b8b5.css.map": "/anime-frontend/static/css/main.44f8b8b5.css.map",
-    "main.bc5b88bc.js.map": "/anime-frontend/static/js/main.bc5b88bc.js.map"
+    "main.02a5869f.js.map": "/anime-frontend/static/js/main.02a5869f.js.map"
   },
   "entrypoints": [
     "static/css/main.44f8b8b5.css",
-    "static/js/main.bc5b88bc.js"
+    "static/js/main.02a5869f.js"
   ]
 }
