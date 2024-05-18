@@ -26,85 +26,73 @@ const AnimeUpdate = () => {
             .then(data => {
                 console.log(data);
                 navigate(-1);
-            }
-           );
+            });
     }
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/api/anime/${id}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-                setAnime(data)
+                setAnime(data);
             });
-    }
-        , [id]);
+    }, [id]);
 
     return (
-        <Card>
-            <Container>
-                <h1>Modify Anime</h1>
-                <Row>
-                    <Col>
-                        <Card className="my-3 p-3 rounded">
-                            <Form>
-                                <Form.Group controlId="formTitle">
-                                    <Form.Label>Title</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Enter Anime Title"
-                                        name="title"
-                                        value={anime.title}
-                                        onChange={handleInputChange}
-
-                                    />
-                                </Form.Group>
-                                <Form.Group controlId="formformDescription">
-                                    <Form.Label>Description</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Enter Anime Description"
-                                        name="description"
-                                        value={anime.description}
-                                        onChange={handleInputChange}
-
-                                    />
-                                </Form.Group>
-                                <Form.Group controlId="formEstimatedTime">
-                                    <Form.Label>Seasons</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Enter total seasons "
-                                        name="estimatedTime"
-                                        value={anime.estimatedTime}
-                                        onChange={handleInputChange}
-
-                                    />
-                                </Form.Group>
-                                
-                                <Form.Group controlId="formYearStarted">
-                                    <Form.Label>Year Started</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Enter Anime year Started"
-                                        name="yearStarted"
-                                        value={anime.yearStarted}
-                                        onChange={handleInputChange}
-
-                                    />
-                                </Form.Group>
-                            </Form>
-
-
-
-                        </Card>
-                        <Button onClick={handleSubmit} variant="dark">Save</Button>
-                        &nbsp;
-                        <Button onClick={() => navigate(-1)} variant="dark">Cancel</Button>
-                    </Col>
-                </Row>
-            </Container>
-        </Card>
+        <Container fluid className="mt-5">
+            <Row className="justify-content-center">
+                <Col md={6}>
+                    <Card className="p-4 shadow">
+                        <h1>Modify Anime</h1>
+                        <Form>
+                            <Form.Group controlId="formTitle">
+                                <Form.Label>Title</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter Anime Title"
+                                    name="title"
+                                    value={anime.title || ''}
+                                    onChange={handleInputChange}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="formDescription">
+                                <Form.Label>Description</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter Anime Description"
+                                    name="description"
+                                    value={anime.description || ''}
+                                    onChange={handleInputChange}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="formEstimatedTime">
+                                <Form.Label>Seasons</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter total seasons"
+                                    name="estimatedTime"
+                                    value={anime.estimatedTime || ''}
+                                    onChange={handleInputChange}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="formYearStarted">
+                                <Form.Label>Year Started</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter Anime year Started"
+                                    name="yearStarted"
+                                    value={anime.yearStarted || ''}
+                                    onChange={handleInputChange}
+                                />
+                            </Form.Group>
+                            <div className="mb-4"></div>
+                            <Button onClick={handleSubmit} variant="success" className="mr-2">Save</Button>
+                            &nbsp;
+                            <Button onClick={() => navigate(-1)} variant="dark">Cancel</Button>
+                        </Form>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

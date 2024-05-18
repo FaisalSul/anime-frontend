@@ -39,59 +39,60 @@ const AnimeAdd = () => {
     };
 
     return (
-        <Card>
-            <Container>
-                <h1>Add Anime</h1>
-                {error && <div className="alert alert-danger">{error}</div>}
-                <Row>
-                    <Col>
-                        <Card className="my-3 p-3 rounded">
-                            <Form onSubmit={handleSubmit}>
-                                <Form.Group controlId="formTitle">
-                                    <Form.Label>Title</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Enter Anime Title"
-                                        name="title"
-                                        onChange={handleInputChange}
-                                    />
-                                </Form.Group>
-                                <Form.Group controlId="formDescription">
-                                    <Form.Label>Description</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Enter Anime Description"
-                                        name="description"
-                                        onChange={handleInputChange}
-                                    />
-                                </Form.Group>
-                                <Form.Group controlId="formEstimatedTime">
-                                    <Form.Label>Seasons</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Enter Anime total seasons"
-                                        name="estimatedTime"
-                                        onChange={handleInputChange}
-                                    />
-                                </Form.Group>
-                                <Form.Group controlId="formYearStarted">
-                                    <Form.Label>Year Started</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Enter Anime year Started"
-                                        name="yearStarted"
-                                        onChange={handleInputChange}
-                                    />
-                                </Form.Group>
-                                <Button type="submit" variant="dark">Save</Button>
+        <Container fluid>
+            <Row className="justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
+                <Col md={6}>
+                    <Card className="p-4 shadow">
+                        <h1 className="text-center mb-4">Add Anime</h1>
+                        {error && <div className="alert alert-danger">{error}</div>}
+                        <Form onSubmit={handleSubmit}>
+                            <Form.Group controlId="formTitle">
+                                <Form.Label>Title</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter Anime Title"
+                                    name="title"
+                                    onChange={handleInputChange}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="formDescription">
+                                <Form.Label>Description</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter Anime Description"
+                                    name="description"
+                                    onChange={handleInputChange}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="formEstimatedTime">
+                                <Form.Label>Seasons</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter Anime total seasons"
+                                    name="estimatedTime"
+                                    onChange={handleInputChange}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="formYearStarted">
+                                <Form.Label>Year Started</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter Anime year Started"
+                                    name="yearStarted"
+                                    onChange={handleInputChange}
+                                />
+                            </Form.Group>
+                            <div className="mb-4"></div> {/* Added space between form content and buttons */}
+                            <div className="d-flex justify-content-start">
+                                <Button type="submit" variant="success">Save</Button>
                                 &nbsp;
-                                <Button onClick={() => navigate(-1)} variant="dark">Cancel</Button>
-                            </Form>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
-        </Card>
+                                <Button onClick={() => navigate(-1)} variant="dark" className="mr-2">Cancel</Button>
+                            </div>
+                        </Form>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 
