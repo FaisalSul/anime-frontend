@@ -16,7 +16,7 @@ root.render(
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/animes" element={<AnimeList />} />
         <Route path="/animes/:id" element={<AnimeDetails />} />
         <Route path="/animes/add" element={<AnimeAdd />} />
